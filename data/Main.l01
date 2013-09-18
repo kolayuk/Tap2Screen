@@ -1,0 +1,75 @@
+/*
+========================================================================
+ Name        : Main.l01
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+// localized strings for language: UK English (01)
+CHARACTER_SET UTF8
+
+#define STR_MainView_3 ""
+#define STR_MainView_4 "Tap2Screen"
+#define STR_MainView_1 "Menu"
+#define STR_MainView_2 "Hide"
+#define STR_MainView_6 "Change"
+#define STR_MainView_7 "About"
+#define STR_MainView_8 "Exit"
+#define STR_MainView_16 "Position (Y)"
+#define STR_MainView_17 "580"
+#define STR_MainView_20 "Size"
+#define STR_MainView_21 "40"
+#define STR_MainView_24 "Image format"
+#define STR_MainView_25 ".jpg"
+#define STR_MainView_28 "Name"
+#define STR_MainView_29 "Screen"
+#define STR_MainView_32 "Path"
+#define STR_MainView_33 "C:\\Screens\\"
+#define STR_MainView_11 "Position (X)"
+#define STR_MainView_12 "0"
+#define STR_MainView_37 "Quality"
+#define STR_MainView_38 "100"
+#define STR_MainView_39 "Select current folder"
+#define STR_MainView_40 "Tap2Screen v.1.7 - About"
+#define STR_MainView_42 ""
+#define STR_MainView_43 "Button can be moved now"
+#define STR_MainView_45 "button can't be moved now"
+#define STR_MainView_46 "Enter the message, please:"
+#define STR_MainView_13 ".png"
+#define STR_MainView_15 ".jpg"
+#define STR_MainView_19 "Name"
+#define STR_MainView_5 "Image format"
+#define STR_MainView_22 ""
+#define STR_MainView_10 "255"
+#define STR_MainView_9 "Transparency"
+#define STR_MainView_14 "Water mark"
+#define STR_MainView_18 "C:\\System\\Apps\\Tap2Screen\\watermark.mbm"
+#define STR_MainView_23 "Hide the button on screenshot"
+#define STR_MainView_26 "No"
+#define STR_MainView_44 "Yes"
+#define STR_MainView_27 "Position in landscape (X)"
+#define STR_MainView_30 "0"
+#define STR_MainView_31 "Position in landscape (Y)"
+#define STR_MainView_34 "0"
+#define STR_MainView_35 "Send a comment to developer"
+#define STR_About "Tap2Screen - it's easy and comfortable screenshoter for your device.\nDeveloper: Usanov-Kornilov Nikolay aka Kolay\nWeb: http://kolaysoft.ru\nSupport: kolayuk@gmail.com\nTwitter: @kolayuk\nGraphics by Volter"
+#define STR_MainView_36 "Play sound after capture"
+#define STR_MainView_41 "No"
+#define STR_MainView_50 "No"
+#define STR_MainView_49 "Vibrate after capture"
+#define STR_MainView_47 "Delay before capturing (ms)"
+#define STR_MainView_48 "0"
+#define STR_AmountDialog "Amount of screenshots (1-X)"
+#define STR_MainView_51 "Amount of screenshots"
+#define STR_MainView_52 "1"
+#define STR_MainView_53 "More applications"
+#define STR_ProximitySensor "Use proximity sensor"
+#define STR_PrevApp "Auto-switch to previous app"
+#define STR_HideTL "Hide in task list"

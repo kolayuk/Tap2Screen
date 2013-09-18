@@ -1,0 +1,76 @@
+/*
+========================================================================
+ Name        : Main.l16
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+// localized strings for language: Russian (16)
+CHARACTER_SET UTF8
+
+#define STR_MainView_3 ""
+#define STR_MainView_4 "Tap2Screen"
+#define STR_MainView_1 "Меню"
+#define STR_MainView_2 "Свернуть"
+#define STR_MainView_6 "Изменить"
+#define STR_MainView_7 "О программе"
+#define STR_MainView_8 "Выход"
+#define STR_MainView_16 "Позиция кнопки Y"
+#define STR_MainView_17 "580"
+#define STR_MainView_20 "Размер кнопки"
+#define STR_MainView_21 "40"
+#define STR_MainView_24 "Формат картинки"
+#define STR_MainView_25 ".jpg"
+#define STR_MainView_28 "Базовое имя"
+#define STR_MainView_29 "Screen"
+#define STR_MainView_32 "Путь сохранения"
+#define STR_MainView_33 "C:\\Screens\\"
+#define STR_MainView_11 "Позиция кнопки Х"
+#define STR_MainView_12 "0"
+#define STR_MainView_37 "Качество"
+#define STR_MainView_38 "100"
+#define STR_MainView_39 "Выбрать текущую папку"
+#define STR_MainView_40 "Tap2Screen v.1.7 - О программе"
+#define STR_MainView_42 ""
+#define STR_MainView_43 "Теперь кнопку можно передвинуть"
+#define STR_MainView_45 "Кнопка зафиксирована"
+#define STR_MainView_46 "Введите текст сообщения:"
+#define STR_MainView_13 ".png"
+#define STR_MainView_15 ".jpg"
+#define STR_MainView_19 "Базовое имя"
+#define STR_MainView_5 "Формат картинки"
+#define STR_MainView_22 ""
+#define STR_MainView_10 "255"
+#define STR_MainView_9 "Прозрачность"
+#define STR_MainView_14 "Водяной знак"
+#define STR_MainView_18 "C:\\System\\Apps\\Tap2Screen\\watermark.mbm"
+#define STR_MainView_23 "Скрывать кнопку на скриншоте"
+#define STR_MainView_26 "Нет"
+#define STR_MainView_44 "Да"
+#define STR_MainView_27 "Позиция в ланшафте (X)"
+#define STR_MainView_30 "0"
+#define STR_MainView_31 "Позиция в ланшафте (Y)"
+#define STR_MainView_34 "0"
+#define STR_About "Tap2Screen - это простой и удобный скриншотер для вашего устройства.\nРазработчик: Усанов-Корнилов Николай aka Kolay\nWeb: http://kolaysoft.ru\nSupport: kolayuk@gmail.com\nTwitter: @kolayuk\n Графика: Volter"
+#define STR_MainView_35 "Написать отзыв"
+#define STR_MainView_36 "Играть звук при снятии"
+#define STR_MainView_41 "Нет"
+#define STR_MainView_50 "Нет"
+#define STR_MainView_49 "Вибрировать при снятии"
+#define STR_MainView_47 "Задержка перед скриншотом (мс)"
+#define STR_MainView_48 "0"
+#define STR_AmountDialog "Количество снимков в серии (1-X)"
+#define STR_MainView_51 "Количество снимков в серии"
+#define STR_MainView_52 "1"
+#define STR_MainView_53 "Другие программы"
+#define STR_ProximitySensor "Исп. датчик приближения"
+#define STR_PrevApp "Перекл. на предыдущее прил-е"
+#define STR_HideTL "Скрывать в дисп. задач"
+

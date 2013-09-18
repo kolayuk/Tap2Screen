@@ -1,0 +1,19 @@
+/*
+========================================================================
+ Name        : Tap2Screen.hrh
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+enum TTap2ScreenViewUids
+	{
+	EMainViewId = 1
+	};
+

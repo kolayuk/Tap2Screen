@@ -1,0 +1,548 @@
+/*
+========================================================================
+ Name        : Main.rssi
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+#include "Main.hrh"
+#include "Main.loc"
+#include <Tap2Screen_aif.mbg>
+
+RESOURCE AVKON_VIEW r_main_main_view
+	{
+	cba = r_main_control_pane;
+	menubar = r_main_options_menu;
+	toolbar = 0;
+	}
+RESOURCE MENU_BAR r_main_options_menu
+	{titles =
+			{
+			MENU_TITLE
+				{
+				menu_pane = r_main_menu_pane1_menu_pane;
+				}
+			};
+
+	}
+RESOURCE STATUS_PANE_APP_MODEL r_main_status_pane
+	{
+	panes =
+		{
+		SPANE_PANE
+			{
+			id = EEikStatusPaneUidTitle;
+			type = EAknCtTitlePane;
+			resource = r_main_title_resource;
+			}
+		};
+	}
+RESOURCE TITLE_PANE r_main_title_resource
+	{
+	txt = STR_MainView_4;
+	}
+RESOURCE LISTBOX r_main_list_box
+	{
+	flags = EAknListBoxSelectionList;
+	}
+RESOURCE CBA r_main_control_pane
+	{
+	buttons =
+		{
+		CBA_BUTTON
+			{
+			id = EAknSoftkeyOptions;
+			txt = STR_MainView_1;
+			},
+		CBA_BUTTON
+			{
+			id = EAknSoftkeyExit;
+			txt = STR_MainView_2;
+			},
+		CBA_BUTTON
+			{
+			id = EAknSoftkeyEmpty;
+			txt = STR_MainView_3;
+			}
+		};
+	}
+RESOURCE MENU_PANE r_main_menu_pane1_menu_pane
+	{
+	items =
+		{
+		MENU_ITEM
+			{
+			command = EMainView_MenuItemCommand;
+			txt = STR_MainView_6;
+			},
+		MENU_ITEM
+			{
+			command = EMainView_MenuItem1Command;
+			txt = STR_MainView_7;
+			},
+		//MENU_ITEM
+		//	{
+		//	command = EMainView_MenuItem3Command;
+		//	txt = STR_MainView_35;
+		//	},
+		MENU_ITEM
+			{
+			command = EMainView_MenuItem4Command;
+			txt = STR_MainView_53;
+			},
+		MENU_ITEM
+			{
+			command = EMainView_MenuItem2Command;
+			txt = STR_MainView_8;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item1
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_11;
+			},
+		LBUF
+			{
+			txt = STR_MainView_12;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item2
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_16;
+			},
+		LBUF
+			{
+			txt = STR_MainView_17;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item3
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_20;
+			},
+		LBUF
+			{
+			txt = STR_MainView_21;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item4
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_24;
+			},
+		LBUF
+			{
+			txt = STR_MainView_25;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item5
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_28;
+			},
+		LBUF
+			{
+			txt = STR_MainView_29;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item6
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_32;
+			},
+		LBUF
+			{
+			txt = STR_MainView_33;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item7
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_37;
+			},
+		LBUF
+			{
+			txt = STR_MainView_38;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item8
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_13;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item9
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_15;
+			}
+		};
+	}
+
+
+RESOURCE DIALOG R_NUMBER_QUERY
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY
+                {
+                layout = ENumberLayout;
+                control = AVKON_INTEGER_EDWIN
+                    {
+                    min = 0;
+                    max = 10000;
+                    };
+                };
+            }
+        };
+    }
+
+RESOURCE TBUF r_pos_x_txt
+	{buf=STR_MainView_11;}
+			RESOURCE TBUF r_delay_txt
+	{buf=STR_MainView_47;}
+																				
+	RESOURCE TBUF r_pos_y_txt
+	{buf=STR_MainView_16;}
+												RESOURCE TBUF r_pos_x_land_txt
+	{buf=STR_MainView_27;}
+												RESOURCE TBUF r_pos_y_land_txt
+	{buf=STR_MainView_31;}
+												RESOURCE TBUF r_size_txt
+	{buf=STR_MainView_20;}
+												RESOURCE TBUF r_path_txt
+	{buf=STR_MainView_32;}
+												RESOURCE TBUF r_format_txt
+	{buf=STR_MainView_5;}
+												RESOURCE TBUF r_format_item1
+	{buf=STR_MainView_13;}
+												RESOURCE TBUF r_format_item2
+	{buf=STR_MainView_15;}
+												RESOURCE TBUF r_base_txt
+	{buf=STR_MainView_19;}
+												RESOURCE TBUF r_quality_txt
+	{buf=STR_MainView_37;}
+												RESOURCE TBUF r_file_selecter_folder_select
+	{buf=STR_MainView_39;}
+												RESOURCE TBUF r_watermark_txt
+	{buf=STR_MainView_14;}
+												RESOURCE TBUF r_transparency
+	{buf=STR_MainView_9;}
+												RESOURCE TBUF r_help_txt
+	{buf=STR_MainView_42;}
+												RESOURCE TBUF r_hide
+	{buf=STR_MainView_23;}
+												RESOURCE DIALOG R_TEXT_QUERY
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items=
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY 
+                { 
+                layout = EDataLayout;
+                control = EDWIN
+                    { 
+                    flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; 
+                    maxlength = 255; 
+                    width = 4; 
+                    lines = 1; 
+                    };
+                };
+            }
+        };
+    }
+RESOURCE TBUF r_about_header
+	{buf=STR_MainView_40;}
+				RESOURCE TBUF r_about_text
+	{buf=STR_About;}
+				RESOURCE TBUF r_ok
+	{buf=STR_MainView_41;}
+				
+	RESOURCE TBUF r_sound
+	{buf=STR_MainView_36;}
+				RESOURCE TBUF r_vibrate
+	{buf=STR_MainView_49;}
+					RESOURCE AVKON_BUTTON r_screen_button
+    {
+    flags  = KAknButtonNoFrame|KAknButtonReportOnLongPress;
+    states =
+            {
+            AVKON_BUTTON_STATE
+                {
+				bmpfile = "\\resource\\apps\\Tap2Screen_aif.mif";
+                bmpid =  EMbmTap2screen_aifIcon;
+                bmpmask =  EMbmTap2screen_aifIcon_mask;
+                helptxt = STR_MainView_42;
+                }  
+            };
+}		
+RESOURCE ARRAY r_main_listbox_item8_2
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_9;
+			},
+		LBUF
+			{
+			txt = STR_MainView_10;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item9_2
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_14;
+			},
+		LBUF
+			{
+			txt = STR_MainView_18;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item10
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_23;
+			},
+		LBUF
+			{
+			txt = STR_MainView_26;
+			}
+		};
+	}
+
+
+RESOURCE ARRAY r_format_popup
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_13;
+			},
+		LBUF
+			{
+			txt = STR_MainView_15;
+			}
+		};
+	}
+RESOURCE ARRAY r_hide_popup
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_26;
+			},
+		LBUF
+			{
+			txt = STR_MainView_44;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item11
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_27;
+			},
+		LBUF
+			{
+			txt = STR_MainView_30;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item12
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_31;
+			},
+		LBUF
+			{
+			txt = STR_MainView_34;
+			}
+		};
+	}
+RESOURCE TBUF r_move_button
+	{buf=STR_MainView_43;}
+				RESOURCE TBUF r_not_move_button
+	{buf=STR_MainView_45;}
+				RESOURCE DIALOG r_callback_dlg
+    {
+    flags = EAknDialogGenericFullScreen;
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EEikCtLabel;
+            id=ELabel;
+            control= LABEL
+            	{
+				txt=STR_MainView_46;
+            	};
+            },
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            id=EEditor;
+            control= EDWIN
+            	{
+				lines=10;
+				maxlength=4096;
+            	};
+            }
+        };
+    }
+RESOURCE ARRAY r_main_listbox_item13
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_36;
+			},
+		LBUF
+			{
+			txt = STR_MainView_41;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item14
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_49;
+			},
+		LBUF
+			{
+			txt = STR_MainView_50;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item15
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_47;
+			},
+		LBUF
+			{
+			txt = STR_MainView_48;
+			}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_item16
+	{
+	items =
+		{
+		LBUF
+			{
+			txt = STR_MainView_51;
+			},
+		LBUF
+			{
+			txt = STR_MainView_52;
+			}
+		};
+	}
+RESOURCE TBUF r_amount_dialog
+	{buf=STR_AmountDialog;}
+
+RESOURCE ARRAY r_main_listbox_proximity
+	{
+	items =
+		{
+		LBUF{txt = STR_ProximitySensor;},
+		LBUF{txt = "";}
+		};
+	}
+
+RESOURCE ARRAY r_main_listbox_switch
+	{
+	items =
+		{
+		LBUF{txt = STR_PrevApp;},
+		LBUF{txt = "";}
+		};
+	}
+RESOURCE ARRAY r_main_listbox_hide
+	{
+	items =
+		{
+		LBUF{txt = STR_HideTL;},
+		LBUF{txt = "";}
+		};
+	}

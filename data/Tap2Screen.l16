@@ -1,0 +1,20 @@
+/*
+========================================================================
+ Name        : Tap2Screen.l16
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+// localized strings for language: Russian (16)
+#define STR_Tap2ScreenApplication_1 ""
+#define STR_Tap2ScreenApplication_2 ""
+#define STR_Tap2ScreenApplication_3 ""
+#define STR_Tap2ScreenApplication_4 "Tap2Screen"
+#define STR_Tap2ScreenApplication_5 "Tap2Screen"

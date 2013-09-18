@@ -1,0 +1,48 @@
+
+TARGET			Tap2Screen.exe
+UID			   0x100039CE 0x2004B2DD
+VENDORID	  	  0
+TARGETTYPE		exe
+EPOCSTACKSIZE	 0xf000
+EPOCHEAPSIZE 0x1000 0x600000
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\variant \epoc32\include\ecom
+USERINCLUDE	   ..\inc ..\data
+
+SOURCEPATH		..\data
+START RESOURCE	Tap2Screen.rss
+HEADER
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	Tap2Screen_reg.rss
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+LIBRARY			euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+LIBRARY			commonengine.lib efsrv.lib estor.lib eikcoctl.lib eikdlg.lib 
+LIBRARY			eikctl.lib bafl.lib fbscli.lib aknnotify.lib aknicon.lib
+LIBRARY			etext.lib gdi.lib egul.lib insock.lib
+LIBRARY			ecom.lib InetProtUtil.lib http.lib esock.lib
+LIBRARY			ws32.lib apgrfx.lib imageconversion.lib bitgdi.lib commdb.lib aknskins.lib aknskinsrv.lib
+LIBRARY			aknswallpaperutils.lib mediaclientaudio.lib HWRMVibraClient.lib touchfeedback.lib flogger.lib
+LIBRARY			SensrvClient.lib sensrvutil.lib
+LANG 				16 01
+
+START BITMAP	Tap2Screen.mbm
+HEADER
+TARGETPATH		\resource\apps
+SOURCEPATH		..\gfx
+SOURCE	c12,1	list_icon.bmp list_icon_mask.bmp
+END
+
+SOURCEPATH		..\src
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE_UDEBONLY
+#endif
+
+SOURCE Main.cpp MainView.cpp Tap2ScreenAppUi.cpp Tap2ScreenDocument.cpp Tap2ScreenApplication.cpp FileSelectDialog.cpp Button.cpp FgrObserver.cpp AudioPlayer.cpp
+CAPABILITY LocalServices NetworkServices WriteUserData ReadUserData UserEnvironment
+
+OPTION GCCE -fno-strict-aliasing
