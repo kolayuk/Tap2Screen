@@ -12,7 +12,7 @@
 &EN
 
 ; standard SIS file header
-#{"Tap2Screen"},(0x2004b2dd),1,07,0
+#{"Tap2Screen"},(0x2004b2dd),1,08,0
 
 ;Localised Vendor name
 %{"KolaySoft"}

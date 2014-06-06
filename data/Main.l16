@@ -37,7 +37,7 @@ CHARACTER_SET UTF8
 #define STR_MainView_37 "Качество"
 #define STR_MainView_38 "100"
 #define STR_MainView_39 "Выбрать текущую папку"
-#define STR_MainView_40 "Tap2Screen v.1.7 - О программе"
+#define STR_MainView_40 "Tap2Screen v.1.8 - О программе"
 #define STR_MainView_42 ""
 #define STR_MainView_43 "Теперь кнопку можно передвинуть"
 #define STR_MainView_45 "Кнопка зафиксирована"

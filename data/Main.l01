@@ -37,7 +37,7 @@ CHARACTER_SET UTF8
 #define STR_MainView_37 "Quality"
 #define STR_MainView_38 "100"
 #define STR_MainView_39 "Select current folder"
-#define STR_MainView_40 "Tap2Screen v.1.7 - About"
+#define STR_MainView_40 "Tap2Screen v.1.8 - About"
 #define STR_MainView_42 ""
 #define STR_MainView_43 "Button can be moved now"
 #define STR_MainView_45 "button can't be moved now"

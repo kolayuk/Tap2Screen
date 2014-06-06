@@ -22,7 +22,7 @@ _LIT(KBaseName,"Screen");
 _LIT(KQuality,"100");
 _LIT(KTransparency,"255");
 _LIT(KWaterMarkPath,"C:\\System\\Apps\\Tap2Screen\\watermark.mbm");
-_LIT(KHideButtonOnScreen,"0");
+_LIT(KHideButtonOnScreen,"1");
 _LIT(KVibrate,"0");
 _LIT(KPlaySound,"1");
 _LIT(KDelayBeforeScreen,"0");
@@ -30,6 +30,7 @@ _LIT(KAmountOfScreens,"1");
 _LIT(KProximitySensor,"0");
 _LIT(KSwitchToPrev,"0");
 _LIT(KHideInTasklist,"0");
+_LIT(KScreensCaptured,"0");
 
 const TInt KProximityMin=400;
 const TInt KProximityMax=2000;

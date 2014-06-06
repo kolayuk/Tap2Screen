@@ -285,6 +285,19 @@ TBool CTap2ScreenAppUi::ReadSettings()
 		iSettings->AppendL(KProximitySensor);
 		iSettings->AppendL(KSwitchToPrev);
 		iSettings->AppendL(KHideInTasklist);
+		TBuf<255> KMask;
+		KMask.Append(iSettings->MdcaPoint(8));
+		KMask.Append(_L("*"));
+		KMask.Append(iSettings->MdcaPoint(7)); //for select by extension
+		CDir* results=NULL;
+		TFindFile findFiles(CEikonEnv::Static()->FsSession());
+		findFiles.FindWildByDir(KMask,iSettings->MdcaPoint(6),results);
+		if (results!=NULL){
+			TBuf<255> b;
+			b.Num(results->Count());
+			iSettings->AppendL(b);
+		}
+		else iSettings->AppendL(KScreensCaptured);
 		//WriteSettings();
 		return EFalse;
 		}
@@ -499,7 +512,9 @@ TBuf<255> CTap2ScreenAppUi::Screen()
 
 	if (!BaflUtils::FolderExists(CEikonEnv::Static()->FsSession(),iSettings->MdcaPoint(6))){CEikonEnv::Static()->FsSession().MkDirAll(iSettings->MdcaPoint(6));}
 	TInt count=0;
+	CDir* results=NULL;
 	TBuf<255> filename;
+	/*
 	while (BaflUtils::FileExists(CEikonEnv::Static()->FsSession(),filename))
 		{
 		count+=1;
@@ -508,7 +523,14 @@ TBuf<255> CTap2ScreenAppUi::Screen()
 		filename.AppendNum(count);
 		filename.Append(iSettings->MdcaPoint(7));
 		}
-	
+	*/
+	TLex conv;
+	conv.Assign(iSettings->MdcaPoint(19));
+	conv.Val(count);
+	filename.Copy(iSettings->MdcaPoint(6));
+	filename.Append(iSettings->MdcaPoint(8));
+	filename.AppendNum(count);
+	filename.Append(iSettings->MdcaPoint(7));
 	//User::After(100000);
 	
 	CFbsBitmap* Bitmap= new (ELeave) CFbsBitmap();
