@@ -32,7 +32,7 @@
     <property id="className">CTap2ScreenApplication</property>
     <property id="documentBase">Tap2Screen</property>
     <property id="name">Tap2ScreenApplication</property>
-    <property id="uid">0x2004B2DD</property>
+    <property id="uid">0xE312908C</property>
     <component id="com.nokia.sdt.series60.CAknDocument">
       <property id="className">CTap2ScreenDocument</property>
       <property id="name">Tap2ScreenDocument</property>

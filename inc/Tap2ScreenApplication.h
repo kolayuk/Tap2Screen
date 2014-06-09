@@ -20,7 +20,7 @@ Contacts:
 // ]]] end generated region [Generated Includes]
 
 // [[[ begin generated region: do not modify [Generated Constants]
-const TUid KUidTap2ScreenApplication = { 0x2004B2DD };
+const TUid KUidTap2ScreenApplication = { 0xE312908C };
 // ]]] end generated region [Generated Constants]
 
 /**

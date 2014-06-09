@@ -22,6 +22,7 @@
 #include <aknutils.h>
 #include <const.h>
 #include <bautils.h>
+#include <coecntrl.h>
 CButton::CButton(): MCoeControlObserver()
 	{
 	}

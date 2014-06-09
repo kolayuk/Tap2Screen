@@ -7,7 +7,7 @@
 #include <Tap2Screen.rsg>
 
 UID2 KUidAppRegistrationResourceFile
-UID3 0x2004B2DD
+UID3 0xE312908C
 
 RESOURCE APP_REGISTRATION_INFO
 	{

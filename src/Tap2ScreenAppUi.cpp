@@ -187,7 +187,6 @@ void CTap2ScreenAppUi::ConstructL()
 		iWinGroup->Construct((TUint32)&iWinGroup, EFalse);
 		iWinGroup->EnableReceiptOfFocus(EFalse); // Don't capture any key events.
 		iWinGroup->SetOrdinalPosition(0, ECoeWinPriorityAlwaysAtFront+6);
-		
 		//iWindow=new (ELeave) RWindow(CEikonEnv::Static()->WsSession());
 		//iWindow->Construct(*iWinGroup, (TUint32)&*iWindow);
 		CApaWindowGroupName* wn=CApaWindowGroupName::NewL(CEikonEnv::Static()->WsSession());
@@ -213,7 +212,6 @@ void CTap2ScreenAppUi::ConstructL()
 			}
 		ChannelInfoList.Close();
 		delete SensrvChannelFinder;
-		
 		iButton=CButton::NewL(iWinGroup,this,R_SCREEN_BUTTON);
 		iButton->SetTransparentBackground(ETrue);
 		UpdatePos();
@@ -233,7 +231,7 @@ void CTap2ScreenAppUi::ConstructL()
 				TApaTask task=list.FindByPos(2);
 				if (task.Exists()){task.BringToForeground();}
 				}
-			}
+			}	
 	}
 
 
@@ -256,6 +254,15 @@ TBool CTap2ScreenAppUi::ReadSettings()
 			iSettings->AppendL(val);
 			}
 		filesave.Close();
+		TInt count;
+		TLex conv;
+		conv.Assign(iSettings->MdcaPoint(19));
+		conv.Val(count);
+		count=count+1;
+		iSettings->Delete(19,1);
+		TBuf<255> b; b.Num(count);
+		iSettings->InsertL(19,b);
+		
 		return ETrue;
 		}
 	else
@@ -285,7 +292,8 @@ TBool CTap2ScreenAppUi::ReadSettings()
 		iSettings->AppendL(KProximitySensor);
 		iSettings->AppendL(KSwitchToPrev);
 		iSettings->AppendL(KHideInTasklist);
-		TBuf<255> KMask;
+		
+		TBuf<255> KMask;	
 		KMask.Append(iSettings->MdcaPoint(8));
 		KMask.Append(_L("*"));
 		KMask.Append(iSettings->MdcaPoint(7)); //for select by extension
@@ -298,6 +306,7 @@ TBool CTap2ScreenAppUi::ReadSettings()
 			iSettings->AppendL(b);
 		}
 		else iSettings->AppendL(KScreensCaptured);
+		
 		//WriteSettings();
 		return EFalse;
 		}
@@ -358,6 +367,7 @@ void CTap2ScreenAppUi::Tap()
 	{
 	if (iIdle->IsActive()){iIdle->Cancel();}
 	iIdle->Start(TCallBack(stDoScreens,this));
+	WriteSettings();
 	}
 TInt CTap2ScreenAppUi::stDoScreens(TAny* aObj)
 	{
@@ -405,6 +415,7 @@ void CTap2ScreenAppUi::DoScreens()
 	}
 void CTap2ScreenAppUi::LongTap()
 	{
+	
 	Exit();
 	}
 void CTap2ScreenAppUi::DoubleTap()
@@ -527,10 +538,14 @@ TBuf<255> CTap2ScreenAppUi::Screen()
 	TLex conv;
 	conv.Assign(iSettings->MdcaPoint(19));
 	conv.Val(count);
+	count=count+1;
 	filename.Copy(iSettings->MdcaPoint(6));
 	filename.Append(iSettings->MdcaPoint(8));
 	filename.AppendNum(count);
 	filename.Append(iSettings->MdcaPoint(7));
+	iSettings->Delete(19,1);
+	TBuf<255> b; b.Num(count);
+	iSettings->InsertL(19,b);
 	//User::After(100000);
 	
 	CFbsBitmap* Bitmap= new (ELeave) CFbsBitmap();
@@ -542,8 +557,8 @@ TBuf<255> CTap2ScreenAppUi::Screen()
 		{Bitmap=AddWaterMark(Bitmap);}
 	
 	TInt q;
-	TLex conv(iSettings->MdcaPoint(9));
-	conv.Val(q);
+	TLex conv1(iSettings->MdcaPoint(9));
+	conv1.Val(q);
 	
 	TJpegImageData *imageData=new (ELeave) TJpegImageData;
 	imageData->iSampleScheme=TJpegImageData::EColor444;

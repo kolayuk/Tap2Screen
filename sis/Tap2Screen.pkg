@@ -12,7 +12,7 @@
 &EN
 
 ; standard SIS file header
-#{"Tap2Screen"},(0x2004b2dd),1,08,0
+#{"Tap2Screen"},(0xE312908C),1,08,0
 
 ;Localised Vendor name
 %{"KolaySoft"}
@@ -34,7 +34,7 @@
 "$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\Tap2Screen_reg.r01"	-"!:\private\10003a3f\import\apps\Tap2Screen_reg.r01"
 "$(EPOCROOT)epoc32\data\z\resource\apps\Tap2Screen_aif.mif" -"!:\resource\apps\Tap2Screen_aif.mif"
 ;"$(EPOCROOT)epoc32\data\z\resource\apps\Tap2Screen.mbm" -"!:\resource\apps\Tap2Screen.mbm"
-"D:\Symbian\9.4\S60_5th_Edition_SDK_v1.0\epoc32\winscw\c\system\Apps\Tap2Screen\watermark.mbm" -"C:\System\Apps\Tap2Screen\watermark.mbm"
+"D:\Symbian\9.4\S60_5th_Edition_SDK_v1.0_2\epoc32\winscw\c\system\Apps\Tap2Screen\watermark.mbm" -"C:\System\Apps\Tap2Screen\watermark.mbm"
 "empty" - "C:\system\apps\Tap2Screen\firststart"
 "camera.wav" - "C:\system\apps\Tap2Screen\camera.wav"
 ; Add any installation notes if applicable

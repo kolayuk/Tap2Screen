@@ -532,6 +532,7 @@ void CMainView::InitValues()
 	TBuf<255> val;
 	for (i=0; i<((CTap2ScreenAppUi*)AppUi())->iSettings->Count();i++)
 		{
+		if (i==19) continue; // screen number
 		val.Copy(((CTap2ScreenAppUi*)AppUi())->iSettings->MdcaPoint(i));
 		ChangeItemSubtitle(i,val);
 		if (i==11||i==12||i==13||i==16||i==17||i==18)
